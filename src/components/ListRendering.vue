@@ -1,10 +1,12 @@
 <template>
 	<div class="list-rendering" >
-        <tr v-for="(food, index) in foods" :key="index">
-            <td>{{ food.name }}</td>
-            <td>{{ food.price }}</td>
-            <td>{{ food.currency }}</td>
-          </tr>
+         <div class="product" v-for="(food, index) in foods" :key="index">
+            <div>{{ food.name }}</div>
+            <div>{{ food.price }}</div>
+            <div>{{ food.currency }}</div>
+            <!-- <img src="{{food.src}}" alt=""> -->
+         </div>
+         
 	</div>
 </template>
 
@@ -13,10 +15,10 @@
         data() {
             return {
                 foods: [
-                    { name: 'Product 1', price: 10, currency: 'USD' },
-                    { name: 'Product 2', price: 20, currency: 'USD' },
-                    { name: 'Product 3', price: 15, currency: 'USD' },
-                    { name: 'Product 4', price: 25, currency: 'USD' }
+                    { name: 'Product 1', price: 30, currency: 'USD' , src:'/src/assets/logo.svg'},
+                    { name: 'Product 2', price: 20, currency: 'USD', src:'/src/assets/logo.svg' },
+                    { name: 'Product 3', price: 15, currency: 'USD',src:'/src/assets/logo.svg' },
+                    { name: 'Product 4', price: 25, currency: 'USD',src:'/src/assets/logo.svg' }
                 ]
             }
         }
@@ -24,4 +26,8 @@
 </script>
 
 <style scoped>
+.product{
+    display: flex;
+    flex-direction: row;
+}
 </style>
