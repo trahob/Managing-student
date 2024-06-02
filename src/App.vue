@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import ListRendering from './components/ListRendering.vue'
 </script>
 
 <template>
@@ -15,6 +16,9 @@ import TheWelcome from './components/TheWelcome.vue'
   <main>
     <TheWelcome />
   </main>
+  <div>
+    <ListRendering/>
+  </div>
 </template>
 
 <style scoped>
