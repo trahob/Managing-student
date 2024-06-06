@@ -8,23 +8,27 @@
       <p>HỆ THỐNG NHÀ HÀNG</p>
     </div>
     <div class="topMenuR">
-        <input class="btnBooking"  type="button" value="     Bắt đầu đặt hàng     ">
+      <input class="btnBooking"  type="button" value="     Bắt đầu đặt hàng     ">
       <p>English</p>
-      <img height="42px" src="/picture/iconMember.jpg" alt="">
-      <img height="42px" src="/picture/iconShopping.jpg" alt="">
-      <img height="37px" src="/picture/iconMenu.jpg" alt="">
+      <img class="iconMem" src="/picture/iconMember.jpg" alt="">
+      <img class="iconMem" src="/picture/iconShopping.jpg" alt="">
+      <img class="iconMem" src="/picture/iconMenu.jpg" alt="">
     </div>
   </div>
 </template>
 
 <style scoped>
+.iconMem{
+  height: 42px;
+}
 .topMenu {
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-around;
 }
 .logo {
   height: 78px;
@@ -32,23 +36,25 @@
 }
 .topMenuL {
 
-  width: 55%;
+  
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 17px;
   font-weight: 700;
   flex-direction: row;
+  gap: 40px;
 }
 .topMenuR{
-    width: 25%;
+   
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 17px;
     font-weight: 700;
     flex-direction: row;
     margin-right: 40px ;
+    gap: 40px;
 }
 .btnBooking{
     height: 35px;
@@ -60,6 +66,16 @@
     border: none;
     margin-right: 5px;
 }
+p {
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+p:hover {
+  text-decoration: underline;
+}
 </style>
 
-<script setup></script>
+<script setup>
+
+</script>

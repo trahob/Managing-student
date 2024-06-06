@@ -1,64 +1,65 @@
 <template>
-    <swiper
-      :slides-per-view="3"
-      :space-between="50"
-      navigation
-      :pagination="{ clickable: true }"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
-    >
-      <swiper-slide>
-        <h2>Slide 1</h2>
-        <p>--------</p>
-        <p>--------</p>
-        <p>--------</p>
-        <p>--------</p>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 2</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 3</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 4</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 5</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 6</h2>
-      </swiper-slide>
-    </swiper>
-  </template>
-  <script>
-  // import Swiper core and required components
-  import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
-  
+  <swiper
+    :pagination="{
+      dynamicBullets: true,
+    }"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
+    <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+  </swiper>
+</template>
+<script>
   // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from "swiper/vue";
-  
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+
   // Import Swiper styles
-  import "swiper/swiper.scss";
-  import "swiper/components/navigation/navigation.scss";
-  import "swiper/components/pagination/pagination.scss";
-  
-  // install Swiper components
-  SwiperCore.use([Navigation, Pagination, A11y]);
-  
-  // Import Swiper styles
+  import 'swiper/css';
+
+  import 'swiper/css/pagination';
+
+
+
+  // import required modules
+  import { Pagination } from 'swiper/modules';
+
   export default {
     components: {
       Swiper,
       SwiperSlide,
     },
-    methods: {
-      onSwiper(swiper) {
-        // console.log(swiper)
-      },
-      onSlideChange() {
-        // console.log('slide change')
-      },
+    setup() {
+      return {
+        modules: [Pagination],
+      };
     },
   };
-  </script>
+</script>
+<style>
+.swiper {
+  width: 100%;  
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
